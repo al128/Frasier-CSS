@@ -6,24 +6,30 @@
 //  take a look at variable.less
 
 // Color -----------------------------------------------------------
-@basecolor              : #48D;
-@compcolor              : #D44;
+@basecolor              : @mahogany;
+@compcolor              : @mustard;
+
+@backgroundcolor: @lightgrey;
 
 @decorcolor             : mix(@basecolor, @lightergrey, 1.5%);
 
-@textcolor              : @darkergrey;
+@textcolor              : @black;
 @linkcolor              : @basecolor;
+@navcolor: @black;
+@codetext: darken(spin(#fff - @codebg, 180), 40%);
 
 @bodycolor              : transparent;
-@htmlcolor              : @white;
+@htmlcolor              : @backgroundcolor;
 @highlightcolor         : fadeout(@basecolor, 80%);
+@headercolor: @darkergrey;
+@codebg: @compcolor;
 
 
 // Typography ------------------------------------------------------
-@bodyfont               : 'Helvetica Neue', Helvetica, Arial, sans-serif;
-@headingfont            : inherit;
+@bodyfont               : Menlo, 'Inconsolata', Monaco, monospace;
+@headingfont            : 'Helvetica Neue', Helvetica, Arial, sans-serif;;
 @altfont                : Cambria, Georgia, Times, 'Times New Roman', serif;
-@codefont               : Menlo, Monaco, monospace;
+@codefont               : @bodyfont;
 
 @basefontsize           : 16px;
 @baselineheight         : (1.5 * @basefontsize); // 1.5 * 16 = 24px
@@ -40,6 +46,7 @@
 @responsive             : true;   // Most of this section is moot, if false
 @layout                 : fixed;  //'liquid' or 'fixed'
 @gutterwidth            : 20px;
+@paneheight: (@baselineheight * 3);
 
 @phone-layout           : 93.75%;
 @phone-landscape-layout : 400px;

@@ -1,50 +1,104 @@
 // Global //////////////////////////////////////////////////////////
 // Variables -------------------------------------------------------
-@navexpands: @tablet-width; // Width at which nav doesn’t need to collapse
 
 // Root ------------------------------------------------------------
 
-[role="banner"],
-[role="main"],
-[role="contentinfo"] {
-  &:extend(.clearfix all);
-}
+header {
+  width: 100%;
 
-// Primary Navigation Menu
-.head nav {
-  @nlh: (@blh * 1.25); // Nav line-height, how tall the links should be
-  @navitems: 2; // Change this to the number of items in your <nav>
+  h1 {
+    background-color: @headercolor;
+    color: @compcolor;
+    margin: 0 auto;
+    text-align: center;
+  }
 
-  ul {
-    .delist();
-    overflow: hidden;
-    max-height: (@nlh * @navitems); // Or change this to the height of your open nav
-    transition: max-height 0.4s; // Or just remove this and max-height
-    
-    li a {
-      display: block;
-      line-height: @nlh;
-    }
-    
-    &[aria-expanded="false"] {
-      max-height: 0 !important;
-    }
-    
-    @media (min-width: @navexpands) {
-      &[aria-expanded] {
-        max-height: none !important;
+  a {
+    display: block;
+    padding: .25em .75em;
+  }
+
+  nav {
+    .font-size(13);
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    background: @grey;
+
+    ul {
+      .delist();
+      .clearfix();
+      text-align: left;
+
+      li {
+        display: block;
+
+        a {
+          display: block;
+          padding: .75em 1em;
+          color: @textcolor;
+          border-left: .75em solid @basecolor;
+
+          &:after {
+            background: @headercolor;
+          }
+          &:hover, &[selected] {
+            color: darken(spin(#fff - @headercolor, 180), 20%)
+          }
+
+          &[selected]:after {
+            background: transparent;
+          }
+        }
+
+        ul {
+          li {
+            a {
+              padding-left: (@blh * 2);
+            }
+          }
+        }
       }
     }
   }
-  
-  .menu_control {
-    .font-size();
-    line-height: @nlh;
-    margin: 0;
-    cursor: pointer;
-    
-    @media (min-width: @navexpands) {
+
+  @media @small-tablet {
+    text-align: center;
+
+    &.layout {
+      padding: 0;
+    }
+
+    &.layout:not(.fix) {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    [role='open'] {
       display: none;
+    }
+
+    nav {
+      background: @basecolor;
+
+      ul {
+        text-align: center;
+        li {
+          margin: 0;
+          display: inline-block;
+
+          a {
+            padding: 0 2em;
+            line-height: 72px;
+            border: 0;
+            background: transparent;
+          }
+
+          ul {
+            display: none;
+          }
+        }
+      }
     }
   }
 }
@@ -57,12 +111,60 @@
 
 // Footer //////////////////////////////////////////////////////////
 
-.foot {
-  
+footer {
+  margin-top: @blh;
+  padding: (@blh * 2) 0;
+  background: @black;
+
+  nav {
+    ul {
+      .delist();
+      margin: 0;
+
+      li {
+        a, a:visited {
+          color: @backgroundcolor;
+        }
+      }
+    }
+  }
+
+  .footnotes {
+    .font-size(13);
+    color: @grey;
+    border-top: .3em solid;
+    margin-top: 1em;
+    padding-top: 1em;
+  }
 }
 
 // Content /////////////////////////////////////////////////////////
 
-.content {
-  
+section {
+  position: relative;
+
+  .hero {
+    width: 320px;
+    max-width: 96%;
+    margin: 0 auto;
+    margin-bottom: -5%;
+
+    img {
+      border: 1em solid @compcolor;
+      border-radius: 50%;
+    }
+  }
+
+  h1 {
+    background: @compcolor;
+    margin: 0 auto;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(255,255,255,0.2);
+  }
+
+  .panel, article {
+    p:first-of-type {
+      font-weight: bold;
+    }
+  }
 }

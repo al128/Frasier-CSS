@@ -1,9 +1,8 @@
 // Elements  ///////////////////////////////////////////////////////
 
-
 //  Horizontal Rule ------------------------------------------------
 
-hr { 
+hr {
   display: block;
   box-sizing: border-box;
   border: none;
@@ -17,8 +16,8 @@ hr {
 // Images ----------------------------------------------------------
 
 img {
-  height: auto; 
-  vertical-align: middle; 
+  height: auto;
+  vertical-align: middle;
   -ms-interpolation-mode: bicubic;
 }
 
@@ -26,19 +25,20 @@ img {
 // Figures ---------------------------------------------------------
 
 figure {
-  margin: 0 0 @elh;
-  
+  margin: 0;
+  margin-bottom: @blh;
+
   img {
     width: 100%;
   }
-  
+
   figcaption {
     display: block;
     font-weight: normal;
     font-size: 0.875em;
     color: mix(@textcolor, @htmlcolor, 60%);
   }
-  
+
   a {
     cursor: pointer;
   }
@@ -49,14 +49,14 @@ figure {
 
 summary {
   cursor: pointer;
-  
+
   &:focus {
     outline: 1px dotted @controlsfocuscolor;
   }
 }
 
 details {
-  
+
 }
 
 
@@ -70,6 +70,11 @@ canvas,
 video {
   vertical-align: middle;
   max-width: 100%;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
 }
 
 // Why not, eh?
@@ -86,8 +91,285 @@ dialog {
   padding: (@elh);
   border: none;
   border-radius: @controlsroundness;
-  
+
   &::backdrop {
     background: fadeout(contrast(@htmlcolor), 75%);
+  }
+}
+
+// Blockquotes, Messages, and Panels -------------------------------
+
+blockquote,
+.message,
+.panel  {
+  margin: 0 0 @elh 0;
+  padding: (@elh * 0.5) @gw;
+
+  color: @textcolor;
+  background-color: @lightergrey;
+  border-left: (@gw * 0.25) solid darken(@lightergrey, 13%);
+
+  //font-family: @altfont;
+
+  i:first-child {
+    position: relative;
+    left: (@gw * -(1/3));
+  }
+
+  p:last-child {
+    margin-bottom: (@elh * 0);
+  }
+
+  > small:last-child {
+    margin: (@elh * 0.25) 0 0;
+
+    &:before {
+      content: '\2014\00a0'; //&ndash;&nbsp;
+    }
+  }
+}
+
+blockquote {
+  .message-primary();
+}
+
+.message-primary {
+  .message-color(@basecolor);
+}
+.message-comp {
+  .message-color(@compcolor);
+}
+.message-alert {
+  .message-color(@alertcolor);
+}
+.message-error {
+  .message-color(@errorcolor);
+}
+.message-info {
+  .message-color(@infocolor);
+}
+.message-warning {
+  .message-color(@warningcolor);
+}
+.message-success {
+  .message-color(@successcolor);
+}
+.message-inverse {
+  .message-color(@inversecolor);
+}
+
+.message-color(@thiscolor) {
+  border-color: @thiscolor;
+  background-color: mix(@thiscolor, @htmlcolor, 9%);
+
+  i {
+    color: @thiscolor;
+  }
+}
+
+
+// Panel ---------------------------------------
+
+.panel {
+  border-left: none;
+  border-top: (@elh * 0.25) solid @bodycolor;
+  .padding-y(0, @blh);
+  margin-bottom: 0;
+
+  i:first-child {
+    left: 0;
+  }
+}
+
+.panel-primary {
+  .panel-color(@basecolor);
+}
+.panel-comp {
+  .panel-color(@compcolor);
+}
+.panel-alert {
+  .panel-color(@alertcolor);
+}
+.panel-error {
+  .panel-color(@errorcolor);
+}
+.panel-info {
+  .panel-color(@infocolor);
+}
+.panel-warning {
+  .panel-color(@warningcolor);
+}
+.panel-success {
+  .panel-color(@successcolor);
+}
+.panel-inverse {
+  .panel-color(@inversecolor);
+}
+
+.panel-color(@thiscolor) {
+  border-color: @thiscolor;
+  background-color: mix(@thiscolor, @htmlcolor, 8%);
+
+  i {
+    color: @thiscolor;
+  }
+
+  a:not(.btn) {
+    @thislinkcolor: mix(@textcolor, @thiscolor, 15%);
+
+    &,
+    &:visited {
+      color: @thislinkcolor;
+    }
+
+    &,
+    & i {
+      transition: color 0.2s;
+    }
+
+    &:hover,
+    &:focus {
+      &,
+      & i {
+        color: darken(@thislinkcolor, 10%);
+      }
+    }
+  }
+
+  input {
+    .input-color(@white);
+  }
+}
+
+
+// Definition lists ------------------------------------------------
+dfn {
+  font-style: normal;
+}
+
+dl {
+  margin-bottom: @elh;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 0 (@elh * 0.5) (@elh);
+}
+
+
+// Text-level ------------------------------------------------------
+abbr[title] {
+  border-color: @lightgrey;
+  cursor: help;
+
+  &.acronym,
+  &.initialism {
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    font-size: 105%;
+  }
+}
+
+var {
+  font-family: @altfont;
+}
+
+ins,
+mark {
+  background-color: rgb(255, 245, 175);
+  color: @textcolor;
+  text-decoration: none;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: @codefont;
+  .font-size(14);
+}
+
+code,
+kbd,
+samp {
+  display: inline-block;
+  margin-bottom: -1px;
+  padding: 0 (1em / 3);
+
+  background-color: @lightergrey;
+  background-color: mix(@basecolor, @htmlcolor, 9%);
+
+  border-bottom: 1px solid mix(@basecolor, @htmlcolor, 36%);
+  height: @elh;
+  white-space: nowrap;
+}
+
+
+// Code ------------------------------------------------------------
+
+pre {
+  margin: 0;
+
+  code {
+    display: block;
+    height: auto;
+    .font-size(12);
+    line-height: 1.5em;
+    padding: (@blh / 2) (@gw);
+
+    background-color: @codebg;
+    border: none;
+
+    white-space: pre;
+    overflow: hidden;
+    overflow-x: auto;
+  }
+}
+
+
+pre[class*="language-"] {
+  display: block;
+  position: relative;
+
+  font-weight: bold;
+  color: @codetext;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+
+  line-height: (@blh * 0.75);
+  background-color: @codebg;
+  margin: 0 0 @blh 0;
+
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+
+  &[class*="language-"]:before {
+    content: attr(data-language);
+    display: block;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    line-height: (@blh * 1.5);
+    padding: 0 (@gw * 0.75);
+    font-family: @bodyfont;
+    color: @white;
+    background-color: @basecolor;
+  }
+
+  code {
+    padding: @blh;
+    color: @codetext;
+  }
+
+  &.language-markup code {
+    color: @lightergrey;
   }
 }

@@ -16,6 +16,7 @@ html {
 
 body {
   &:extend(.clearfix all);
+  position: relative;
   background: @bodycolor /* url('../img/assist/baseline24.png') left 0px */;
   width: 100%;
   font-family: @bodyfont;
@@ -29,13 +30,13 @@ a {
   color: @linkcolor;
   transition: color 0.2s;
 
-  &:visited { 
+  &:visited {
     color: @linkcolorvisited;
   }
-  &:hover { 
+  &:hover {
     color: @linkcolorhover;
   }
-  &:focus { 
+  &:focus {
     outline: @basecolor thin dotted;
     color: @linkcolorfocus;
   }
@@ -44,10 +45,46 @@ a {
   }
 }
 
+a {
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    transition: width .2s ease-out, opacity .2s ease-out;
+    background: @linkcolor;
+  }
+
+  &:hover {
+    background: transparent;
+    color: darken(spin(#fff - @linkcolor, 180), 30%);
+
+    &:after {
+      width: 100%;
+    }
+  }
+
+  &[selected] {
+    opacity: 0.6;
+  }
+}
+
+nav, nav a, nav a:visited {
+  color: @navcolor;
+}
+
 // Selection -------------------------------------------------------
 ::-moz-selection {
   background-color: @highlightcolor;
-  color: inherit; 
+  color: inherit;
   text-shadow: none;
 }
 

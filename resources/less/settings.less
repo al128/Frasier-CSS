@@ -6,35 +6,30 @@
 //  take a look at variable.less
 
 // Color -----------------------------------------------------------
-@basecolor              : @mahogany;
-@compcolor              : @mustard;
+@basecolor              : #48D;
+@compcolor              : @textcolor;
 
-@backgroundcolor: @lightgrey;
+@decorcolor             : mix(@bodycolor, contrast(@bodycolor), 95%);
 
-@decorcolor             : mix(@basecolor, @lightergrey, 1.5%);
-
-@textcolor              : @black;
-@linkcolor              : @basecolor;
-@navcolor: @black;
-@codetext: darken(spin(#fff - @codebg, 180), 40%);
+@textcolor              : #383434;
+@linkcolor              : #000;
 
 @bodycolor              : transparent;
-@htmlcolor              : @backgroundcolor;
+@htmlcolor              : #F9BEBD;
 @highlightcolor         : fadeout(@basecolor, 80%);
-@headercolor: @darkergrey;
-@codebg: @compcolor;
 
 
 // Typography ------------------------------------------------------
-@bodyfont               : Menlo, 'Inconsolata', Monaco, monospace;
-@headingfont            : 'Helvetica Neue', Helvetica, Arial, sans-serif;;
+@bodyfont               : 'Rubik', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@headingfont            : inherit;
 @altfont                : Cambria, Georgia, Times, 'Times New Roman', serif;
-@codefont               : @bodyfont;
+@codefont               : 'Source Code Pro', Menlo, Monaco, monospace;
 
-@basefontsize           : 16px;
+@basefontsize           : 18px;
 @baselineheight         : (1.5 * @basefontsize); // 1.5 * 16 = 24px
 @emlineheight           : unit((@baselineheight / unit(@basefontsize)), em);
 
+@topweight              : 900;
 @headingweight          : 500;
 @headingcolor           : inherit;
 
@@ -46,7 +41,6 @@
 @responsive             : true;   // Most of this section is moot, if false
 @layout                 : fixed;  //'liquid' or 'fixed'
 @gutterwidth            : 20px;
-@paneheight: (@baselineheight * 3);
 
 @phone-layout           : 93.75%;
 @phone-landscape-layout : 400px;
@@ -63,7 +57,7 @@
 @controlsroundness      : 2px;  // 0 for square controls
 @controlsborderwidth    : 1px;  // Minimum 1px for built-in focus/hover styles
 
-@controlsbackground     : @decorcolor;
+@controlsbackground     : @lightergrey;
 @controlsbordercolor    : @controlsbackground;
 @controlsfocuscolor     : @linkcolor;
 

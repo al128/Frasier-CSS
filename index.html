@@ -1,137 +1,74 @@
-<html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 
 <!-- NOT PENNY'S BOAT -->
 
-<title>Frasier CSS</title>
-<meta name="description" content="cutLESS">
-<meta name="author" content="cutLESS">
+<title>LOSST</title>
+<meta name="description" content="Create basic pages using LOcssT">
 
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<link href='https://fonts.googleapis.com/css?family=PT+Mono|Inconsolata' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Rubik:300,400,900,500,700,400italic|Source+Code+Pro:500,400' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="resources/css/style.css">
 
-<link rel="shortcut icon" href="resources/img/icon/favicon.png">
-<link rel="apple-touch-icon-precomposed" href="resources/img/icon/apple-touch-icon-precomposed.png">
-<meta name="apple-mobile-web-app-title" content="cutLESS">
-
 </head>
-<body class="fixed">
-  <header>
-    <h1>FRASIER</h1>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li
-        ><li>
-          <a href="/discover" title="">Discover</a>
-          <ul>
-            <li><a>Discovery</a></li>
-          </ul>
-        </li
-        ><li><a href="/invest" title="">Invest</a></li
-        ><li><a href="/support" title="">Support</a></li>
-      </ul>
-    </nav>
+<body class="fixed" id="home">
+  <header class="head">
+    <div class="layout">
+      <h1>LOSST</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#discover" title="">Discover</a></li>
+          <li><a href="#invest" title="">Invest</a></li>
+          <li><a href="#support" title="">Support</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <canvas id="hero" class='hero' width="720" height="320"></canvas>
+  <article class="layout">
+    <h2> <i class='fa fa-space-shuttle'></i> Discover</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur <a href="#">adipiscing</a> elit. Proin facilisis ex ac tortor laoreet, ut posuere diam fermentum. Nulla iaculis sodales nisl a pulvinar. Maecenas vitae tincidunt felis. Nam egestas euismod risus, id interdum urna posuere a. Proin sagittis laoreet metus, in fringilla est. Quisque vulputate magna lacus, pellentesque facilisis metus venenatis ut. Etiam vel ante eget purus fermentum pulvinar at vel orci.</p>
+    <p>Etiam tincidunt fringilla quam, eu imperdiet libero pulvinar imperdiet. Quisque volutpat felis quis lectus dapibus, sit amet rhoncus ante rutrum. Mauris auctor urna sed elit <a href="#">adipiscing</a>, vel bibendum mauris dignissim. Phasellus tincidunt elementum condimentum. Nullam ullamcorper ex non lectus aliquet accumsan. Nulla nec sagittis justo.</p>
 
-  <div class="content">
-    <section id="hero">
-      <div class="layout">
-        <div data-panel="discover">
-          <h2>Discover</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur <a href="#">adipiscing</a> elit. Proin facilisis ex ac tortor laoreet, ut posuere diam fermentum. Nulla iaculis sodales nisl a pulvinar. Maecenas vitae tincidunt felis. Nam egestas euismod risus, id interdum urna posuere a. Proin sagittis laoreet metus, in fringilla est. Quisque vulputate magna lacus, pellentesque facilisis metus venenatis ut. Etiam vel ante eget purus fermentum pulvinar at vel orci.</p>
-          <p>Etiam tincidunt fringilla quam, eu imperdiet libero pulvinar imperdiet. Quisque volutpat felis quis lectus dapibus, sit amet rhoncus ante rutrum. Mauris auctor urna sed elit <a href="#">adipiscing</a>, vel bibendum mauris dignissim. Phasellus tincidunt elementum condimentum. Nullam ullamcorper ex non lectus aliquet accumsan. Nulla nec sagittis justo.</p>
-          <figure><img src='resources/img/face.jpg'/></figure>
-          <p>Etiam tincidunt fringilla quam, eu imperdiet libero pulvinar imperdiet. Quisque volutpat felis quis lectus dapibus, sit amet rhoncus ante rutrum. Mauris auctor urna sed elit <a href="#">adipiscing</a>, vel bibendum mauris dignissim. Phasellus tincidunt elementum condimentum. Nullam ullamcorper ex non lectus aliquet accumsan. Nulla nec sagittis justo.</p>
-<pre class="language-js">
-  <code>  // Preload our content
-  _$.createImage([{
-    id: "bg",
-    url: "bokeh-bg.png"
-  }, {
-    id: "fg",
-    url: "bokeh-fg.png"
-  }], onload);</code>
+    <p>
+<pre class="language-javascript">
+  // Let's rock
+  console.log("Test. 1. 2. 3.");
+  _$.start();
 </pre>
-        </div>
-        <div data-panel="discover">
-          <h2>Invest</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur <a href="#">adipiscing</a> elit. Proin facilisis ex ac tortor laoreet, ut posuere diam fermentum. Nulla iaculis sodales nisl a pulvinar. Maecenas vitae tincidunt felis. Nam egestas euismod risus, id interdum urna posuere a. Proin sagittis laoreet metus, in fringilla est. Quisque vulputate magna lacus, pellentesque facilisis metus venenatis ut. Etiam vel ante eget purus fermentum pulvinar at vel orci.</p>
-          <p>Etiam tincidunt fringilla quam, eu imperdiet libero pulvinar imperdiet. Quisque volutpat felis quis lectus dapibus, sit amet rhoncus ante rutrum. Mauris auctor urna sed elit <a href="#">adipiscing</a>, vel bibendum mauris dignissim. Phasellus tincidunt elementum condimentum. Nullam ullamcorper ex non lectus aliquet accumsan. Nulla nec sagittis justo.</p>
-        </div>
-        <div data-panel="discover">
-          <h2>Support</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur <a href="#">adipiscing</a> elit. Proin facilisis ex ac tortor laoreet, ut posuere diam fermentum. Nulla iaculis sodales nisl a pulvinar. Maecenas vitae tincidunt felis. Nam egestas euismod risus, id interdum urna posuere a. Proin sagittis laoreet metus, in fringilla est. Quisque vulputate magna lacus, pellentesque facilisis metus venenatis ut. Etiam vel ante eget purus fermentum pulvinar at vel orci.</p>
-          <p>Etiam tincidunt fringilla quam, eu imperdiet libero pulvinar imperdiet. Quisque volutpat felis quis lectus dapibus, sit amet rhoncus ante rutrum. Mauris auctor urna sed elit <a href="#">adipiscing</a>, vel bibendum mauris dignissim. Phasellus tincidunt elementum condimentum. Nullam ullamcorper ex non lectus aliquet accumsan. Nulla nec sagittis justo.</p>
-        </div>
-      </div>
-    </section>
+    </p>
 
-    <section id="discover"></section>
-  </div>
+    <h2> <i class='fa fa-money'></i> Invest</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur <a href="#">adipiscing</a> elit. Proin facilisis ex ac tortor laoreet, ut posuere diam fermentum. Nulla iaculis sodales nisl a pulvinar. Maecenas vitae tincidunt felis. Nam egestas euismod risus, id interdum urna posuere a. Proin sagittis laoreet metus, in fringilla est. Quisque vulputate magna lacus, pellentesque facilisis metus venenatis ut. Etiam vel ante eget purus fermentum pulvinar at vel orci.</p>
+    <p>Etiam tincidunt fringilla quam, eu imperdiet libero pulvinar imperdiet. Quisque volutpat felis quis lectus dapibus, sit amet rhoncus ante rutrum. Mauris auctor urna sed elit <a href="#">adipiscing</a>, vel bibendum mauris dignissim. Phasellus tincidunt elementum condimentum. Nullam ullamcorper ex non lectus aliquet accumsan. Nulla nec sagittis justo.</p>
+    <p>
+
+    <h2> <i class='fa fa-heart-o'></i> Support</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur <a href="#">adipiscing</a> elit. Proin facilisis ex ac tortor laoreet, ut posuere diam fermentum. Nulla iaculis sodales nisl a pulvinar. Maecenas vitae tincidunt felis. Nam egestas euismod risus, id interdum urna posuere a. Proin sagittis laoreet metus, in fringilla est. Quisque vulputate magna lacus, pellentesque facilisis metus venenatis ut. Etiam vel ante eget purus fermentum pulvinar at vel orci.</p>
+    <p>Etiam tincidunt fringilla quam, eu imperdiet libero pulvinar imperdiet. Quisque volutpat felis quis lectus dapibus, sit amet rhoncus ante rutrum. Mauris auctor urna sed elit <a href="#">adipiscing</a>, vel bibendum mauris dignissim. Phasellus tincidunt elementum condimentum. Nullam ullamcorper ex non lectus aliquet accumsan. Nulla nec sagittis justo.</p>
+    <p>
+  </article>
 
   <footer>
     <div class="layout">
-      <nav>
-        <ul>
-          <li><a href="http://studiouniver.se">Studio Universe</a></li>
-          <li><a href="https://github.com/al128/Frasier-CSS">Frasier-CSS</a></li>
-          <li><a href="https://github.com/al128/axease">Axease.js</a></li>
-          <li><a href="https://github.com/jasonhibbs/cutLESS">cutLESS</a></li>
-        </ul>
-      </nav>
-
-      <div class="footnotes">
-        <span>Copyright &copy; Studio Universe. All rights reserved.</span>
-      </div>
+      <blockquote class="footnotes">
+        Copyright &copy; Studio Universe. All rights reserved.
+      </blockquote>
     </div>
   </footer>
 
   <script type="text/javascript" src="https://rawgithub.com/al128/axease/master/build/axease.solo.0.2.js"></script>
   <script>
-
-    // Preload our content
-    _$.createImage([{
-      id: "bg",
-      url: "resources/img/star_layer.jpg"
-    }, {
-      id: "fg",
-      url: "resources/img/ground_layer.png"
-    }], onload);
-
-    // Onload
-    function onload() {
-      _$.ax.addScreen({
-        "screen": "canvas#hero",
-        "sprites": [{
-          spriteId: "bg",
-          scroll: {
-            below: { y: 0.2 }, // 1 - bottom of canvas
-            center: { y: 0 }, // 0 - middle of canvas
-            above: { y: -0.2 } // -1 top of canvas
-          }
-        }, {
-          spriteId: "fg",
-          scroll: {
-            below: { y: 0.8 }, // 1 - bottom of canvas
-            center: { y: 0.7 }, // 0 - middle of canvas
-            above: { y: 0.6 } // -1 top of canvas
-          }
-        }]
-      });
-
-      // All done, let's rock
-      _$.start();
-    }
-
+    // Let's rock
+    _$.start();
   </script>
 </body>
 </html>

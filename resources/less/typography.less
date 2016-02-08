@@ -38,7 +38,22 @@ h2 {
   border-top: 6px solid;
   padding-top: (@blh * 2);
   margin: (@blh * 2) 0;
+  // text-align: center;
   .font-set(64, 48);
+
+  @media @small-tablet {
+    text-align: left;
+  }
+
+  .fa {
+    display: block;
+    margin-top: @blh;
+
+    @media @small-tablet {
+      display: inline-block;
+      margin: 0;
+    }
+  }
 }
 
 h3 {

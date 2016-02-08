@@ -6,51 +6,35 @@ input[type="button"],
 input[type="submit"],
 input[type="image"],
 .btn {
-  .font-set(12, (@blh - (@buttonborderwidth * 2)));
-
   display: inline-block;
   max-width: 100%;
-  padding: 0 (7em/8);
+  padding: (@blh / 2) @blh;
   margin: 0;
 
-  border: @buttonborderwidth solid @buttonbordercolor;
+  border: @buttonborderwidth solid;
   border-radius: @buttonroundness;
 
-  background: @buttonbackground;
-  transition: color 0.2s, border-color 0.2s, background-color 0.2s, opacity 0.2s;
+  background: transparent;
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s, opacity 0.2s, box-shadow 0.2s;
 
   text-align: center;
   white-space: nowrap;
   vertical-align: top;
   cursor: pointer;
 
-  &,
-  &:visited,
-  &:hover {
-    color: contrast(@buttonbackground, @textcolor, @white);
-  }
+  box-shadow: inset 0px 2px rgba(0,0,0,0);
 
   &:focus,
   &:hover {
     outline: none;
     text-decoration: none;
-    background-color: darken(@buttonbackground, 5%);
-    border-color: darken(@buttonbackground, 5%);
+    background-color: @highlightcolor;
+    box-shadow: inset 0px 2px 2px rgba(0,0,0,0.3);
   }
 
-  & when (@buttondepth) {
-    border-bottom-color: darken(@buttonbordercolor, 10%);
-
-    &:focus,
-    &:hover {
-      border-color: darken(@buttonbackground, 5%);
-      border-bottom-color: darken(@buttonbordercolor, 15%);
-    }
-
-    &:active {
-      border-color: darken(@buttonbackground, 5%);
-      border-top-color: darken(@buttonbordercolor, 15%);
-    }
+  &:active {
+    background-color: darken(@highlightcolor, 10%);
+    box-shadow: inset 0px 3px 3px rgba(0,0,0,0.3);
   }
 
   &.disabled,

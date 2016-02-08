@@ -13,14 +13,23 @@
 // Primary Navigation Menu
 .head {
   .clearfix();
+  > div {
+    .clearfix();
+  }
+
   background: @highlightcolor;
-  padding: @blh;
+
+  @media @tablet {
+    padding: (@blh * 2) 0;
+  }
 }
 
 .head h1 {
-  float: left;
-  padding: 0;
-  margin: 0;
+  @media @tablet {
+    float: left;
+    padding: 0;
+    margin: 0;
+  }
 
   font-weight: 700;
   .font-set(64, 48);
@@ -30,31 +39,48 @@
   @nlh: (@blh * 1.25); // Nav line-height, how tall the links should be
   @navitems: 2; // Change this to the number of items in your <nav>
 
-  float: right;
+  @media @tablet {
+    float: right;
+  }
 
   ul {
     .delist();
     .clearfix();
     overflow: hidden;
-    margin: 0 auto;
+
+    margin: (@blh * 2) 0;
+    @media @tablet {
+      margin: 0 auto;
+    }
 
     li {
-      display: block;
-      float: left;
+      @media @tablet {
+        display: block;
+        float: left;
+        margin-left: @blh;
+      }
+
+      &:first-child {
+        margin-left: 0;
+
+        a {
+          border-top: thin solid;
+        }
+      }
 
       a {
         background: none;
         display: block;
         line-height: @nlh;
-        padding: 0;
-        margin-left: @blh;
 
-        font-weight: 300;
-        line-height: 1;
-      }
+        border-bottom: thin solid;
+        padding: (@blh / 2) 0;
 
-      &:first-child {
-        margin-left: 0;
+        @media @tablet {
+          border: none !important;
+          padding: 0;
+          line-height: 1;
+        }
       }
     }
 
@@ -99,4 +125,17 @@ ul.dash {
       content: "- ";
     }
   }
+}
+
+.frame {
+  border: 8px solid;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
 }

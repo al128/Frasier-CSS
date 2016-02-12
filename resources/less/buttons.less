@@ -8,8 +8,9 @@ input[type="image"],
 .btn {
   display: inline-block;
   max-width: 100%;
-  padding: (@blh / 2) @blh;
-  margin: 0;
+  padding: (@blh / 2) (@blh / 1);
+  margin: (@blh / 4) 0;
+  margin-right: (@blh / 4);
 
   border: @buttonborderwidth solid;
   border-radius: @buttonroundness;
@@ -63,22 +64,20 @@ input[type="image"],
 
 .btn-small {
   .font-set(11, (@smallsize - (@buttonborderwidth * 2)));
-}
-
-.btn-base {
-  .font-set(12, (@basesize - (@buttonborderwidth * 2)));
+  padding: (@blh / 4) (@blh / 2);
+  border-radius: @controlsroundness;
 }
 
 .btn-large {
-  .font-set(14, (@largesize - (@buttonborderwidth * 2)));
+  .font-set(22, (@largesize - (@buttonborderwidth * 2)));
 }
 
 .btn-xlarge {
-  .font-set(16, (@xlargesize - (@buttonborderwidth * 2)));
+  .font-set(26, (@xlargesize - (@buttonborderwidth * 2)));
 }
 
 .btn-xxlarge {
-  .font-set(18, (@xxlargesize - (@buttonborderwidth * 2)));
+  .font-set(30, (@xxlargesize - (@buttonborderwidth * 2)));
 }
 
 .btn-size(@size) {
@@ -102,7 +101,7 @@ input[type="image"],
   background-color: @thiscolor;
   border-color: @thiscolor;
   & when (@buttondepth) {
-    border-bottom-color: darken(@thiscolor, 15%);
+    // border-bottom-color: darken(@thiscolor, 15%);
   }
 
   &,
@@ -121,14 +120,14 @@ input[type="image"],
       background-color: desaturate(darken(@thiscolor, 5%), 8%);
       border-color:     desaturate(darken(@thiscolor, 5%), 8%);
       & when (@controlsdepth) {
-        border-bottom-color: darken(@thiscolor, 20%);
+        //border-bottom-color: darken(@thiscolor, 20%);
       }
     }
     .colors() when (luma(@thiscolor) > 60%) {
       background-color: desaturate(darken(@thiscolor, 5%), 5%);
       border-color:     desaturate(darken(@thiscolor, 5%), 5%);
       & when (@controlsdepth) {
-        border-bottom-color: darken(@thiscolor, 20%);
+        //border-bottom-color: darken(@thiscolor, 20%);
       }
     }
     .colors();
@@ -139,14 +138,14 @@ input[type="image"],
       background-color: desaturate(darken(@thiscolor, 5%), 8%);
       border-color:     desaturate(darken(@thiscolor, 5%), 8%);
       & when (@controlsdepth) {
-        border-top-color: darken(@thiscolor, 20%);
+        //border-top-color: darken(@thiscolor, 20%);
       }
     }
     .colors() when (luma(@thiscolor) > 60%) {
       background-color: desaturate(darken(@thiscolor, 5%), 5%);
       border-color:     desaturate(darken(@thiscolor, 5%), 5%);
       & when (@controlsdepth) {
-        border-top-color: darken(@thiscolor, 20%);
+        //border-top-color: darken(@thiscolor, 20%);
       }
     }
     .colors();

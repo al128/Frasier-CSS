@@ -18,6 +18,12 @@ form {
   ul {
     .delist();
   }
+
+  &.em {
+    border: @controlsborderwidth solid;
+    border-radius: @controlsroundness;
+    padding: @blh;
+  }
 }
 
 // General ---------------------------------------------------------
@@ -30,8 +36,7 @@ select {
   padding: 0 (1em/3);
   margin: 0;
 
-  border: @inputborderwidth solid @inputbordercolor;
-  border-radius: @inputroundness;
+  border: none;
 
   background: @inputbackground;
   transition: border-color 0.2s, background-color 0.2s;
@@ -47,12 +52,13 @@ select {
 
   &:hover,
   &:focus {
-    border-color: @inputfocuscolor;
+    background: darken(@inputbackground, 3%);
     outline: none;
   }
 
   //&:invalid,
   &.invalid {
+    border: @controlsborderwidth solid;
     border-color: lighten(@errorcolor, 36%);
     background-color: lighten(@errorcolor, 36%);
 
@@ -88,6 +94,11 @@ label {
   cursor: pointer;
   display: inline-block;
   vertical-align: top;
+
+  &.align {
+    width: 100px;
+    text-align: left;
+  }
 }
 
 input[type="range"]:focus,
